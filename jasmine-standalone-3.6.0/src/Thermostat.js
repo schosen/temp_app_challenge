@@ -19,6 +19,10 @@ class Thermostat {
         this.powerSavingMode = false;
     }
 
+    switchPowerSavingModeOn() {
+        this.powerSavingMode = true;
+    }
+
     up(inc = 1) {
         this.temp += inc;
     }
