@@ -1,0 +1,44 @@
+<head>
+  <link rel="stylesheet" href="index.css">
+  <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+  <main class="app">
+    <div class="dial-container">
+
+      <svg class="dial" viewBox="0 0 400 400">
+        <defs>
+      <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#e5e5e5"/>
+        <stop offset="100%" stop-color="#e5e5e5"stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+        <line class="dial__tick" x1="50%" x2="50%" y1="17%" y2="83%" />
+        <line class="dial__tick" x1="17%" x2="83%" y1="50%" y2="50%" />
+        <circle class="dial__center" id="dial-center" cx="50%" cy="50%" r="120"/>
+        <text class="dial__temp" x="50%" y="50%" text-anchor="middle"><tspan id="temp-display" class="temp-display">19</tspan><tspan class="dial__temp-units">&deg;C</tspan></text>
+        <g class="dial__control">
+        <circle class="dial__track" cx="50%" cy="50%" r="152" stroke="url(#linear)"/>
+        <circle id="temp-handle" class="dial__dot" cx="48" cy="50%" r="8" stroke="transparent" stroke-width="20">
+          </g>
+      </svg>
+
+      <div class="buttons">
+        <button class='temp-inc-btn'>+</button>
+        <button class='temp-dec-btn'>-</button>
+        <button class='temp-reset-btn'>reset</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="jasmine-standalone-3.6.0/src/interface.js"></script>
+  <script src="jasmine-standalone-3.6.0/src/Thermostat.js"></script>
+</body>
+
+<aside class="credit">
+  <small>Inspired by<br> <a href="https://dribbble.com/shots/6309454-Smart-Home-App" target="_blank">"Smart Home App" by Julia Jakubiak</a></small>
+</aside>
+ 
