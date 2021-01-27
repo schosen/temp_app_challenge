@@ -22,6 +22,10 @@ describe("Thermostat", function() {
         expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
 
+    it('can switch the power saving mode off', function() {
+        thermostat.switchPowerSavingModeOff();
+        expect(thermostat.isPowerSavingModeOn()).toBe(false)
+    })
 
     describe("temperature increase", function() {
         it('should go up by at least one', function() {
