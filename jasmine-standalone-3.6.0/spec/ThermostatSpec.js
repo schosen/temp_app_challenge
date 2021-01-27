@@ -34,6 +34,27 @@ describe("Thermostat", function() {
         expect(thermostat.isPowerSavingModeOn()).toBe(true);
     })
 
+    describe('when power saving mode is on', function() {
+        it('has a maximum temperature of 25 degrees', function() {
+            for (var i = 0; i < 6; i ++) {
+                thermostat.up();
+            }
+
+            expect(thermostat.getTemp()).toEqual(25);
+        });
+    });
+
+    describe('when the power saving mode is off', function() {
+        it('has a maximum temperature of 32 degrees', function() {
+            thermostat.switchPowerSavingModeOff(); 
+
+            for (var i = 0; i < 13; i++) {
+              thermostat.up();
+            }
+            expect(thermostat.getTemp()).toEqual(32);
+        });
+    });
+
     describe("temperature increase", function() {
         it('should go up by at least one', function() {
             thermostat.up();
