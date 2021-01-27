@@ -16,7 +16,12 @@ describe("Thermostat", function() {
 
         expect(thermostat.getTemp()).toEqual(10);
         
-    })
+    });
+
+    it('has a power saving mode on by default', function() {
+        expect(thermostat.isPowerSavingModeOn()).toBe(true);
+    });
+
 
     describe("temperature increase", function() {
         it('should go up by at least one', function() {
